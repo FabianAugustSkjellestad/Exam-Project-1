@@ -1,0 +1,26 @@
+:root {
+
+    --primary-font: inria-serif, serif;
+
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 20px;
+    --font-size-p: 14px;
+    --font-size-label: 16px;
+
+    --primary-color: #0F1724;
+    --secondary-color: #F7F4F0;
+    --accent-color: #FFFFFF;
+}
+
+html, body {
+    font-family: var(--primary-font);
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
