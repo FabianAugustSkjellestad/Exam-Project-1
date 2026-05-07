@@ -1,0 +1,39 @@
+.success-section {
+    text-align: center;
+    margin: 100px;
+    padding: 40px;
+    background-color: var(--accent-color);
+}
+
+.success-icon {
+    font-size: 90px;
+    color: var(--primary-color);
+    margin: 30px;
+}
+
+.success-title {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.success-message {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.success-logo {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.success-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 1px;
+    transition: background-color 0.3s ease;
+}
