@@ -24,3 +24,35 @@ body {
     margin: 0;
     padding: 0;
 }
+
+header {
+    display: flex;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    justify-content: space-between;
+    position: relative;
+    height: 120px;
+    align-items: center;
+    overflow-x: clip;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.header-right a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: var(--font-size-label);
+}
+
+.logo {
+    font-family: var(--primary-font);
+    color: var(--accent-color);
+    font-size: 36px;
+    font-weight: 500;
+    text-decoration: none;
+    padding-left: 40px;
+}
