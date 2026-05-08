@@ -13,3 +13,27 @@
     text-align: center;
     padding-top: 500px;
 }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+.homepage-btn {
+    align-content: center;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 10px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px;
+    border-radius: 1px;
+    transition: background-color 0.3s ease;
+}
+.homepage-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+    
