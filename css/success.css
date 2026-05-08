@@ -37,3 +37,9 @@
     border-radius: 1px;
     transition: background-color 0.3s ease;
 }
+
+.success-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
