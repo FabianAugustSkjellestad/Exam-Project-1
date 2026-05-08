@@ -38,6 +38,49 @@
     color: var(--accent-color);
 }
 
+/* Carousel Styles */
+.carousel-section {
+    position: relative;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    background-color: var(--secondary-color);
+}
+
+#carousel-container {
+    overflow: hidden;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-slide {
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item {
+    display: none;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 400px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    animation: fadeIn 0.8s ease-in-out forwards;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Thumbnail Styles */
 #product-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
