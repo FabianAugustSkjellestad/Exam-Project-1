@@ -39,9 +39,17 @@ function displayProducts() {
             <img src="${product.image.url}" alt="${product.title}" class="product-image">
             <h3 class="product-title">${product.title}</h3>
             <p class="product-price">$${product.price.toFixed(2)}</p>
+            <button class="view-product-btn">View Product</button>
         `;
 
         productContainer.appendChild(productCard);
+
+        // Add click event listener to the "View Product" button
+        const viewButton = productCard.querySelector(".view-product-btn");
+        viewButton.addEventListener("click", (event) => {
+            event.stopPropagation(); // Prevent the click from bubbling up to the product card
+            window.location.href = `product.html?id=${product.id}`;
+        });
 
         // Add click event listener to navigate to product details page
         productCard.addEventListener("click", () => {
