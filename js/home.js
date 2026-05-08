@@ -87,6 +87,9 @@ nextButton.innerHTML = "&#10095;";
 carouselContainer.appendChild(prevButton);
 carouselContainer.appendChild(nextButton);
 
+prevButton.setAttribute("aria-label", "Previous Slide");
+nextButton.setAttribute("aria-label", "Next Slide");
+
 // Add event listeners for navigation buttons
 prevButton.addEventListener("click", () => {
     const items = carouselContainer.querySelectorAll(".carousel-item");
@@ -107,6 +110,32 @@ nextButton.addEventListener("click", () => {
     });
 }
 );
+
+//Add swipe detection for mobile devices
+let touchStartX = 0;
+let touchEndX = 0;
+
+carouselContainer.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].screenX;
+}
+);
+
+carouselContainer.addEventListener("touchend", (event) => {
+    touchEndX = event.changedTouches[0].screenX;
+    handleSwipe();
+}
+);
+
+function handleSwipe() {
+    if (touchEndX < touchStartX) {
+        // Swipe left, go to next slide
+        nextButton.click();
+    }
+    if (touchEndX > touchStartX) {
+        // Swipe right, go to previous slide
+        prevButton.click();
+    }
+}
 
 
 // Function for responsive thumbnail to display 12 products on the homepage
