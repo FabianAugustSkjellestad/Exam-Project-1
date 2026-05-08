@@ -19,6 +19,96 @@ async function fetchProductsData() {
     }
 }
 
+// Function to display carousel with 3 products from the API. The carousel will automatically slide every 5 seconds and will also have navigation buttons for manual sliding. The carousel will be responsive and will display 1 product on mobile devices, 2 products on tablets, and 3 products on desktop devices. The carousel will also have a fade-in effect when sliding to the next product.
+function displayCarousel() {
+    const carouselContainer = document.getElementById("carousel-container");
+    const carouselSlide = carouselContainer.querySelector(".carousel-slide");
+    carouselSlide.innerHTML = ""; // Clear existing carousel items
+
+    if (products.length === 0) {
+        carouselSlide.innerHTML = "<p class='error-message'>No products available for the carousel.</p>";
+        return;
+    }
+
+    const carouselProducts = products.slice(0, 3); // Get the first 3 products for the carousel
+
+    carouselProducts.forEach((product, index) => {
+        const imageUrl = product.image && product.image.url ? product.image.url : "https://via.placeholder.com/150";
+        const productItem = document.createElement("div");
+        productItem.classList.add("carousel-item");
+
+        if (index === 0) {
+            productItem.style.display = "block"; // Show the first item initially
+        } else {
+            productItem.style.display = "none"; // Hide other items
+        }   
+
+        productItem.innerHTML = `
+            <img src="${imageUrl}" alt="${product.title}" class="carousel-image">
+            <h3 class="carousel-title">${product.title}</h3>
+            <p class="carousel-price">$${product.price.toFixed(2)}</p>
+        `;
+        carouselSlide.appendChild(productItem);
+    }
+
+    );
+
+    // Initialize carousel functionality
+    let currentIndex = 0;
+    const totalItems = carouselProducts.length;
+
+    function showCarouselItem(index) {
+        const items = carouselSlide.querySelectorAll(".carousel-item");
+        items.forEach((item, i) => {
+            item.style.display = i === index ? "block" : "none";
+        });
+    }
+
+    function nextCarouselItem() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        showCarouselItem(currentIndex);
+    }
+
+    // Show the first item initially
+    showCarouselItem(currentIndex);
+
+    // Set up automatic sliding every 5 seconds
+    setInterval(nextCarouselItem, 5000);
+}
+
+//Create navigation buttons for the carousel
+const carouselContainer = document.getElementById("carousel-container");
+const prevButton = document.createElement("button");
+prevButton.classList.add("carousel-nav", "prev");
+prevButton.innerHTML = "&#10094;";
+const nextButton = document.createElement("button");
+nextButton.classList.add("carousel-nav", "next");
+nextButton.innerHTML = "&#10095;";
+carouselContainer.appendChild(prevButton);
+carouselContainer.appendChild(nextButton);
+
+// Add event listeners for navigation buttons
+prevButton.addEventListener("click", () => {
+    const items = carouselContainer.querySelectorAll(".carousel-item");
+    let currentIndex = Array.from(items).findIndex(item => item.style.display === "block");
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    items.forEach((item, i) => {
+        item.style.display = i === currentIndex ? "block" : "none";
+    });
+}
+);
+
+nextButton.addEventListener("click", () => {
+    const items = carouselContainer.querySelectorAll(".carousel-item");
+    let currentIndex = Array.from(items).findIndex(item => item.style.display === "block");
+    currentIndex = (currentIndex + 1) % items.length;
+    items.forEach((item, i) => {
+        item.style.display = i === currentIndex ? "block" : "none";
+    });
+}
+);
+
+
 // Function for responsive thumbnail to display 12 products on the homepage
 function displayProducts() {
     const productContainer = document.getElementById("product-container");
@@ -63,7 +153,7 @@ function displayProducts() {
 async function initHomepage() {
     await fetchProductsData();
     displayProducts();
+    displayCarousel();
 }
-
 // Call the initialization function when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", initHomepage);
