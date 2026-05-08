@@ -27,6 +27,7 @@
     border: 1px solid var(--primary-color);
     padding: 10px 30px;
     font-size: 16px;
+    font-family: var(--primary-font);
     cursor: pointer;
     margin: 20px;
     border-radius: 1px;
@@ -90,6 +91,7 @@
     border: 1px solid var(--primary-color);
     padding: 10px 20px;
     font-size: 16px;
+    font-family: var(--primary-font);
     cursor: pointer;
     border-radius: 1px;
     transition: background-color 0.3s ease;
