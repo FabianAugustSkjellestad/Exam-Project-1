@@ -57,27 +57,48 @@
     display: flex;
     position: relative;
     width: 100%;
-    min-height: 450px;
+    min-height: 400px;
     align-items: center;
     justify-content: center;
 }
 
 .carousel-item {
     display: none;
-    background-color: var(--primary-color);
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 400px;
-    width: 100%;
+    max-width: 600px;
+    min-height: 350px;
+    width: 90%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 1;
     animation: fadeIn 0.8s ease-in-out forwards;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-title {
+    margin-top: 10px;
+    text-align: center;
+    font-size: var(--font-size-h2);
+    color: var(--primary-color);
+}
+
+.carousel-price {
+    text-align: center;
+    font-size: var(--font-size-p);
+    color: var(--primary-color);
+    margin-top: 5px;
 }
 
 .carousel-nav {
