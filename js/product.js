@@ -1,4 +1,4 @@
-const API_URL = "https://v2.api.noroff.dev/online-shop/";
+const API_URL = "https://v2.api.noroff.dev/online-shop";
 
 // Get the product ID from the URL parameters
 function getProductIdFromUrl() {
@@ -26,7 +26,7 @@ function hideLoader() {
 async function fetchProductDetails(productId) {
     try {
         showLoader();
-        const response = await fetch(`${API_URL}products/${productId}`);
+        const response = await fetch(`${API_URL}products${productId}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
