@@ -41,13 +41,14 @@ function displayCarousel() {
             productItem.style.display = "block"; // Show the first item initially
         } else {
             productItem.style.display = "none"; // Hide other items
-        }   
+        }
 
         productItem.innerHTML = `
             <img src="${imageUrl}" alt="${product.title}" class="carousel-image">
             <h3 class="carousel-title">${product.title}</h3>
             <p class="carousel-price">$${product.price.toFixed(2)}</p>
         `;
+        // Add click event listener to navigate to product details page
         productItem.addEventListener("click", () => {
             window.location.href = `product.html?id=${product.id}`;
         }
