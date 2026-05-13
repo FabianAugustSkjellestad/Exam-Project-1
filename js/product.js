@@ -6,27 +6,12 @@ function getProductIdFromUrl() {
     return params.get("id");
 }
 
-// Function to show the loader
-function showLoader() {
-    const loader = document.getElementById("loader");
-    if (loader) {
-        loader.classList.remove("hidden");
-    }
-}
-
-// Function to hide the loader
-function hideLoader() {
-    const loader = document.getElementById("loader");
-    if (loader) {
-        loader.classList.add("hidden");
-    }
-}
 
 // Function to fetch single product details
 async function fetchProductDetails(productId) {
     try {
         showLoader();
-        const response = await fetch(`${API_URL}products${productId}`);
+        const response = await fetch(`${API_URL}/${productId}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
