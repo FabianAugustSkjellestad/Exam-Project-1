@@ -51,3 +51,39 @@ function displayError(message) {
     </div>
     `;
 }
+
+// Function to display product details
+function displayProductDetails(product) {
+    const productContainer = document.getElementById("product-details");
+    if (!product) {
+        displayError("Product not found.");
+        return;
+    }
+    const imageUrl = product.image && product.image.url ? product.image.url : "https://via.placeholder.com/300";
+    productContainer.innerHTML = `
+    <div class="product-details">
+        <img src="${imageUrl}" alt="${product.title}" class="product-image">
+        <div class="product-info">
+            <h2 class="product-title">${product.title}</h2>
+            <p class="product-price">$${product.price.toFixed(2)}</p>
+            <p class="product-description">${product.description}</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+    `;
+}
+
+// Main function to initialize the product page
+async function initProductPage() {
+    const productId = getProductIdFromUrl();
+    if (!productId) {
+        displayError("No product ID provided in the URL.");
+        return
+    } else {
+        const productDetails = await fetchProductDetails(productId);
+        displayProductDetails(productDetails);
+    }
+}
+
+// Initialize the product page when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", initProductPage);
