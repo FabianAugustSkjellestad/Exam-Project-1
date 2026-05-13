@@ -1,5 +1,4 @@
 // This file is for the homepage of the website. It contains the code for the product feed and the carousel.
-
 const API_URL = "https://v2.api.noroff.dev/online-shop";
 let products = [];
 
@@ -22,7 +21,16 @@ async function fetchProductsData() {
 // Function to display carousel with 3 products from the API. The carousel will automatically slide every 5 seconds and will also have navigation buttons for manual sliding. The carousel will be responsive and will display 1 product on mobile devices, 2 products on tablets, and 3 products on desktop devices. The carousel will also have a fade-in effect when sliding to the next product.
 function displayCarousel() {
     const carouselContainer = document.getElementById("carousel-container");
+    if (!carouselContainer) {
+        console.error("Carousel container not found.");
+        return;
+    }
+
     const carouselSlide = carouselContainer.querySelector(".carousel-slide");
+    if (!carouselSlide) {
+        console.error("Carousel slide element not found.");
+        return;
+    }
     carouselSlide.innerHTML = ""; // Clear existing carousel items
 
     if (products.length === 0) {
@@ -54,9 +62,7 @@ function displayCarousel() {
         }
         );
         carouselSlide.appendChild(productItem);
-    }
-
-    );
+});
 
     // Initialize carousel functionality
     let currentIndex = 0;
@@ -71,6 +77,11 @@ function displayCarousel() {
 
     function nextCarouselItem() {
         currentIndex = (currentIndex + 1) % totalItems;
+        showCarouselItem(currentIndex);
+    }
+
+    function prevCarouselItem() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
         showCarouselItem(currentIndex);
     }
 
