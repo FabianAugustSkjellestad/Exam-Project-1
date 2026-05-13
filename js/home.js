@@ -48,6 +48,10 @@ function displayCarousel() {
             <h3 class="carousel-title">${product.title}</h3>
             <p class="carousel-price">$${product.price.toFixed(2)}</p>
         `;
+        productItem.addEventListener("click", () => {
+            window.location.href = `product.html?id=${product.id}`;
+        }
+        );
         carouselSlide.appendChild(productItem);
     }
 
