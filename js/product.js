@@ -41,3 +41,13 @@ async function fetchProductDetails(productId) {
     }
 }
 
+// Display error message
+function displayError(message) {
+    const productContainer = document.getElementById("product-details");
+    productContainer.innerHTML = `
+    <div class="error-container">
+        <p class="error-message">${message}</p>
+        <a href="index.html" class="back-home-btn">Back to Homepage</a>
+    </div>
+    `;
+}
