@@ -62,6 +62,7 @@ function displayProductDetails(product) {
 async function initProductPage() {
     const productId = getProductIdFromUrl();
     if (!productId) {
+        hideLoader(); 
         displayError("No product ID provided in the URL.");
         return
     } else {
