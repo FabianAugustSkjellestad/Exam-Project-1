@@ -39,7 +39,7 @@ async function getProduct() {
 // Function to display product details
 function renderProduct(product) {
     const productContainer = document.getElementById("product-container");
-    container.innerHTML = ""
+    productContainer.innerHTML = ""
 
     const imageDiv = document.createElement("div");
     const image = document.createElement("img");
@@ -82,13 +82,13 @@ function renderProduct(product) {
     title.textContent = product.title;
     description.textContent = product.description;
 
-    if (product.discountedPrice) < product.price) {
-        price.textContent = `$${product.price.toFixed(2)}`;
-        discountedPrice.textContent = `$${product.discountedPrice.toFixed(2)}`;
-        price.classList.add("original-price");
-        discountedPrice.classList.add("discounted-price");
+    if (product.discountedPrice < product.price) {
+        price.textContent = `$${product.price.toFixed(2)}`
+        discountedPrice.textContent = `$${product.discountedPrice.toFixed(2)}`
+        price.classList.add("original-price")
+        discountedPrice.classList.add("discounted-price")
     } else {
-        price.textContent = `$${product.price.toFixed(2)}`;
+        price.textContent = `$${product.price.toFixed(2)}`
     }
 
     rating.innerHTML = createRatingStars(product.rating);
@@ -114,7 +114,7 @@ function renderProduct(product) {
         })
     } else {
         const li = document.createElement("li")
-        li.textContent = "Not revewed yet."
+        li.textContent = "Not reviewed yet."
         li.classList.add("no-info")
         reviewList.appendChild(li)
     }
@@ -132,7 +132,8 @@ function renderProduct(product) {
             await navigator.clipboard.writeText(shareInput.value)
             shareMessage.classList.remove("hidden")
             setTimeout(() => {
-                shareMessage.classList.add("hidden"), 2000)
+                shareMessage.classList.add("hidden")
+            }, 2000)
             } catch (error) {
                 console.error("Failed to copy link:", error)
             }
@@ -154,8 +155,8 @@ function renderProduct(product) {
 
         imageDiv.appendChild(image)
         priceDiv.appendChild(price)
-        if (discountedPrice.textContent) pricesDiv.appendChild(discountedPrice)
-            shareSection.appendChild(shareButton, shareInput, shareMessage)
+        if (discountedPrice.textContent) priceDiv.appendChild(discountedPrice)
+            shareSection.append(shareButton, shareInput, shareMessage)
 
         detailsDiv.append(
             title,
@@ -169,8 +170,8 @@ function renderProduct(product) {
             reviewList
         )
 
-        container.append(imageDiv, detailsDiv)
-    }
+        productContainer.append(imageDiv, detailsDiv)
+}
 
     getProduct()
 
@@ -197,7 +198,7 @@ function createRatingStars(rating) {
         starsHtml += `<i class="fa-regular fa-star"></i>`
     }
 
-    return `<div class="rating-stars">${starsHTML}<span class="rating-number">${rating.toFixed(1)} / 5</span></div>`
+    return `<div class="rating-stars">${starsHtml}<span class="rating-number">${rating.toFixed(1)} / 5</span></div>`
 }
 
 // Function to add product to cart
