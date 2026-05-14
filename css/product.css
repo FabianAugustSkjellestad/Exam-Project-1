@@ -108,8 +108,36 @@
 .copy-button {
     background-color: var(--primary-color);
     color: var(--accent-color);
-    margin-right: 15px;
-    padding: 5px 10px;
+    margin-right: 10px;
+    padding: 10px 15px;
     border: none;
     cursor: pointer;
+}
+
+.fa-share {
+    color: var(--secondary-color);
+    font-size: var(--font-size-label);
+}
+
+.share-section {
+    position: relative;
+}
+
+.share-url {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px 15px;
+    border-radius: 0;
+    border: 1px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.copy-message {
+    position: absolute;
+    font-weight: 400;
+    padding-left: 10px;
+}
+
+.copy-message.hidden {
+    display: none;
 }
