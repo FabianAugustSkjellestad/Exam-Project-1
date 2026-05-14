@@ -63,3 +63,53 @@
     font-size: var(--font-size-h2);
     font-weight: 400;
 }
+
+.product-description,
+.product-specific-prices,
+.rating-number {
+    font-weight: 300;
+    font-size: var(--font-size-label);
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: var(--primary-color);
+}
+
+.discounted-price {
+    color: red;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.product-description {
+    width: 390px;
+}
+
+.rating-number {
+    padding-left: 10px;
+}
+
+.product-tags {
+    display: flex;
+    list-style: none;
+    font-size: var(--font-size-label);
+}
+
+.product-tags li {
+    border: 2px solid var(--primary-color);
+    padding: 5px 10px;
+    flex-direction: row;
+    margin-right: 10px;
+    margin-bottom: 23px;
+    border-radius: 50px;
+}
+
+.copy-button {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    margin-right: 15px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
