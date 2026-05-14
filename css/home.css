@@ -1,3 +1,18 @@
+:root {
+
+    --primary-font: inria-serif, serif;
+
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 20px;
+    --font-size-p: 14px;
+    --font-size-label: 16px;
+
+    --primary-color: #0F1724;
+    --secondary-color: #F7F4F0;
+    --accent-color: #FFFFFF;
+}
+
 .home-img {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("../Image Ellory/pexels-rulomx-7249993.jpg");
     background-size: cover;
