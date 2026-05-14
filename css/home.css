@@ -199,14 +199,13 @@
 .product-price .original-price {
     text-decoration: line-through;
     color: var(--primary-color);
-    margin-right: 10px;
+    margin-right: 5px;
     font-size: var(--font-size-p);
 }
 
 .discounted-price {
     font-size: var(--font-size-p);
     color: red;
-    margin: 0 20px 20px 20px;
     font-weight: 500;
 }
 
