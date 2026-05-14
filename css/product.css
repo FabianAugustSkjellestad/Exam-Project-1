@@ -206,3 +206,20 @@
     padding-top: 20px;
     cursor: pointer;
 }
+
+.toast-view-cart,
+.toast-continue {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    border: none;
+    padding: 10px 17px;
+    font-size: var(--font-size-label);
+    font-family: var(--primary-font);
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
