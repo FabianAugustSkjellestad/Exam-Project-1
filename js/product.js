@@ -1,7 +1,17 @@
+//Loader//
+showLoader()
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        hideLoader();
+    }, 300)
+});
+
+// Base URL for the API
 const API_URL = "https://v2.api.noroff.dev/online-shop";
 
 // Get the product ID from the URL parameters
 function getProductIdFromUrl() {
+    showLoader();
     const params = new URLSearchParams(window.location.search);
     return params.get("id");
 }
@@ -46,6 +56,8 @@ async function fetchAndCreateProduct() {
             <img src="${imageUrl}" alt="${product.title}" class="product-image">
             <h2 class="product-title">${product.title}</h2>
             <p class="product-price">$${product.price.toFixed(2)}</p>
+            <p class="product-tag">${product.tag}</p>
+            <p class="product-rating">Rating: ${product.rating} / 5</p>
             <p class="product-description">${product.description}</p>
         `;
 
