@@ -124,7 +124,7 @@ function renderProduct(product) {
     shareInput.value = window.location.href
     shareInput.id = "shareUrl"
     shareInput.name = "shareUrl"
-    shareButton.innerHTML = `<i class="fas fa-copy"></i>`
+    shareButton.innerHTML = `<i class="fa-solid fa-share-from-square"></i>`
     shareMessage.textContent = "Link copied to clipboard!"
 
     shareButton.addEventListener("click", async () => {
