@@ -28,21 +28,15 @@
     padding: 10px 30px;
     font-size: 16px;
     font-family: var(--primary-font);
-    cursor: pointer;
     margin: 20px;
     border-radius: 1px;
-    transition: background-color 0.3s ease;
-}
-.homepage-btn:hover {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
 }
 
 /* Carousel Styles */
 .carousel-section {
     position: relative;
-    padding: 60px 20px;
-    margin-bottom: 40px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
     background-color: var(--secondary-color);
 }
 
