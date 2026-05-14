@@ -187,6 +187,20 @@
     font-weight: 500;
 }
 
+.product-price .original-price {
+    text-decoration: line-through;
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: var(--font-size-p);
+}
+
+.discounted-price {
+    font-size: var(--font-size-p);
+    color: red;
+    margin: 0 20px 20px 20px;
+    font-weight: 500;
+}
+
 .view-product-btn {
     background-color: var(--accent-color);
     color: var(--primary-color);
