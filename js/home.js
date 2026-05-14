@@ -54,7 +54,6 @@ function displayCarousel() {
         productItem.innerHTML = `
             <img src="${imageUrl}" alt="${product.title}" class="carousel-image">
             <h3 class="carousel-title">${product.title}</h3>
-            <p class="carousel-price">$${product.price.toFixed(2)}</p>
         `;
         // Add click event listener to navigate to product details page
         productItem.addEventListener("click", () => {
