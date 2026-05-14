@@ -12,3 +12,16 @@ function hideLoader() {
     if (loader)
         loader.classList.add("hidden");
     }
+
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || []
+    const count = cart.reduce((acc, item) => acc + item.quantity, 0)
+    const cartCountElements = document.querySelectorAll(".cart-count")
+    cartCountElements.forEach(el => {
+        el.textContent = count > 0 ? count : ""
+    })
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount()
+})
