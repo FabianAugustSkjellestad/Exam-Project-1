@@ -154,6 +154,7 @@ function handleSwipe() {
 }
 
 
+
 // Function for responsive thumbnail to display 12 products on the homepage
 function displayProducts() {
     const productContainer = document.getElementById("product-container");
@@ -169,11 +170,12 @@ function displayProducts() {
         productCard.classList.add("product-card");
         const imageUrl = product.image && product.image.url ? product.image.url : "https://via.placeholder.com/150";
         const price = product.price || 0; // Default to 0 if price is missing
+        const isDiscounted = product.discountedPrice < product.price; // Check if the product is discounted
 
         productCard.innerHTML = `
-            <img src="${product.image.url}" alt="${product.title}" class="product-image">
+            <img src="${imageUrl}" alt="${product.title}" class="product-image">
             <h3 class="product-title">${product.title}</h3>
-            <p class="product-price">$${product.price.toFixed(2)}</p>
+            <p class="product-price">${isDiscounted ? `<span class="original-price">$${price.toFixed(2)}</span> <span class="discounted-price">$${product.discountedPrice.toFixed(2)}</span>` : `$${price.toFixed(2)}`}</p>
             <button class="view-product-btn">View Product</button>
         `;
 
