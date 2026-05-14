@@ -233,7 +233,7 @@ function showCartToast() {
     toast.classList.add("show")
     setTimeout(() => {
         toast.classList.remove("show")
-    }, 3000)
+    }, 5000)
 }
 
 document.addEventListener("DOMContentLoaded", () => {
