@@ -234,3 +234,13 @@ function showCartToast() {
         toast.classList.remove("show")
     }, 3000)
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toast = document.getElementById("cart-toast")
+    const continueBtn = document.querySelector(".toast-continue")
+    if (continueBtn) {
+        continueBtn.addEventListener("click", () => {
+            toast.classList.remove("show")
+        })
+    }
+})
