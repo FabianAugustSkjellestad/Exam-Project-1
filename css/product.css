@@ -141,3 +141,35 @@
 .copy-message.hidden {
     display: none;
 }
+
+.reviews-header {
+    font-size: var(--font-size-h3);
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.product-reviews {
+    font-size: var(--font-size-p);
+    list-style: none;
+    border: 2px solid var(--primary-color);
+    padding: 10px 8px;
+    max-width: 300px;
+}
+
+.product-reviews li {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.add-to-cart-button {
+    display: block;
+    background-color: var(--primary-color);
+    font-family: var(--primary-font);
+    color: var(--accent-color);
+    font-size: var(--font-size-label);
+    border: none;
+    font-weight: 500;
+    padding: 15px 70px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
