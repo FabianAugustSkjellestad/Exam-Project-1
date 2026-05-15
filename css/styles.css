@@ -161,4 +161,23 @@ header {
 .footer p {
     font-size: var(--font-size-p);
 } 
-    
+
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .header-right{
+        display: none;
+    }
+
+    .logo {
+        padding-left: 20px;
+    }
+
+    .fa-bars {
+        display: block;
+    }
+
+
+}
