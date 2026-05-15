@@ -129,17 +129,10 @@ header {
 
 
 /* hamburger menu styles */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
 .hamburger-menu {
     border: none;
     background: var(--primary-color);
-    color: var(--secondary-color);
+    color: var(--accent-color);
     font-size: 20px;
     padding-right: 20px;
 }
@@ -152,8 +145,8 @@ header {
     top: 120px;
     right: 0;
     width: 100%;
-    background-color: var(--secondary-color);
-    z-index: 1000;
+    background-color: var(--primary-color);
+    z-index: 999;
     justify-content: flex-start;
     align-items: center;
     overflow-x: auto;
@@ -178,24 +171,36 @@ header {
 
 .mobile-nav-links li {
     padding: 20px 0 20px 0;
-    border-bottom: 1px solid var(--primary-color);
-    width: 90%;
+    border-bottom: 1px solid var(--secondary-color);
+    width: 100%;
     margin-left: 10px;
+    list-style: none;
 }
 
-.mobile-nav-links li a {
+.mobile-nav-links a {
     display: inline-block;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
 .mobile-icons {
     display: flex;
+    flex-direction: row;
     gap: 20px;
     padding-top: 40px;
     padding-bottom: 20px;
     width: 100%;
     justify-content: center;
+    align-items: center;
+}
+
+.mobile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: var(--secondary-color);
+    text-decoration: none;
 }
 
 /* Loader styles */
@@ -256,7 +261,8 @@ header {
 /* Responsive styles */
 @media (max-width: 900px) {
     .footer-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr; 
+        gap: 15px;
     }
 
     .header-right{
