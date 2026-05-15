@@ -26,6 +26,7 @@ html, body {
     padding: 0;
 }
 
+/* Header styles */
 header {
     display: flex;
     background-color: var(--primary-color);
@@ -109,6 +110,24 @@ header {
     border: 0;
 }
 
+.cart-icon {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    border-radius: 50%;
+    font-size: var(--font-size-p);
+    padding: 2px 6px;
+}
+
+.cart-count:empty {
+    display: none;
+}
+
+/* Loader styles */
 .loader {
     position: fixed;
     top: 0;
@@ -136,11 +155,11 @@ header {
     100% { transform: rotate(360deg); }
 }
 
-/* Hidden state for loader */
 .loader.hidden {
     display: none;
 }
 
+/* Footer styles */
 .footer {
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -162,6 +181,8 @@ header {
     font-size: var(--font-size-p);
 } 
 
+
+/* Responsive styles */
 @media (max-width: 900px) {
     .footer-container {
         grid-template-columns: 1fr 1fr;
