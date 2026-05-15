@@ -1,5 +1,4 @@
 //Loader//
-showLoader()
 window.addEventListener("load", () => {
     setTimeout(() => {
         hideLoader();
@@ -18,6 +17,7 @@ async function getProduct() {
     if (!productId) {
         console.error("Product ID not found in URL.");
         document.getElementById("product-container").innerHTML = "<p class='error-message'>Product ID is missing in the URL.</p>";
+        hideLoader();
         return;
     }
     try {
@@ -27,6 +27,9 @@ async function getProduct() {
         }
         const data = await response.json();
         const product = data.data;
+
+        await new Promise(resolve => setTimeout(resolve, 500))
+
         renderProduct(product);
     } catch (error) {
         console.error("Failed to fetch product:", error);
@@ -237,6 +240,7 @@ function showCartToast() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    getProduct()
     const toast = document.getElementById("cart-toast")
     const continueBtn = document.querySelector(".toast-continue")
     if (continueBtn) {
