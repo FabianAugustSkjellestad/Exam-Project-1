@@ -197,9 +197,11 @@ function displayProducts() {
 
 // Function to initialize the homepage
 async function initHomepage() {
+    showLoader();
     await fetchProductsData();
     displayProducts();
     displayCarousel();
+        hideLoader();
 }
 // Call the initialization function when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
