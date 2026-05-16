@@ -28,7 +28,7 @@ async function getProduct() {
         const data = await response.json();
         const product = data.data;
 
-        await new Promise(resolve => setTimeout(resolve, 500))
+        await new Promise(resolve => setTimeout(resolve, 100))
 
         renderProduct(product);
     } catch (error) {
