@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELLORY | Product Feed Page</title>
+    <meta name="description" content="Discover your favorite accessories at ELLORY">
+    <title>ELLORY | Cart Page</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/cart.css">
-    <script type="module" src="./js/main.js"></script>
-    <script type="module" src="./js/cart.js"></script>
+    <link rel="stylesheet" href="./css/home.css">
+    <script src="./js/utils.js" defer></script>
+    <script src="./js/cart.js" defer></script>
     <script src="https://kit.fontawesome.com/f838836607.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -48,10 +49,20 @@
         </div>
     </nav>
     <main>
-        <section class="cart-section">
-            <h1 class="cart-title"></h1>
-            </section>
-            </main>
+        <section class="cart-container">
+            <div class="cart-section-left">
+                <h1 class="cart-headline">Your Cart</h1>
+                <div id="cart-container" class="cart-items">
+                    <!-- Cart items will be dynamically added here -->
+            </div>
+            </div>
+            <div class="cart-section-right">
+                <h2 class="cart-sum-title">Total Sum</h2>
+                <h3 class="cart-h3">Shipping & Delivery: $0</h3>
+                <h3 id="cart-total" class="cart-total">Total Sum:</h3>
+                <button id="checkout-button" class="checkout-btn">Check Out</button>
+             </div>
+    </main>
             <footer class="footer">
                 <section class="footer-container">
                     <div class="Customer-Service">
