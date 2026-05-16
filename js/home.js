@@ -1,10 +1,3 @@
-//Loader//
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        hideLoader();
-    }, 300)
-});
-
 // This file is for the homepage of the website. It contains the code for the product feed and the carousel.
 const API_URL = "https://v2.api.noroff.dev/online-shop";
 let products = [];
@@ -209,4 +202,6 @@ async function initHomepage() {
     displayCarousel();
 }
 // Call the initialization function when the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", initHomepage);
+document.addEventListener("DOMContentLoaded", () => {
+    initHomepage()
+});

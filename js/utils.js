@@ -15,6 +15,13 @@ function hideLoader() {
     }
 }
 
+// Auto-hide the loader after the page has fully loaded
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        hideLoader();
+    }, 300);
+})
+
 
 // Function for hamburger menu toggle
 const hamburgerMenu = document.getElementById("hamburgerMenu");
