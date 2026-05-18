@@ -15,9 +15,8 @@
 
 
 .cart-container {
+    margin: 20px auto;
     background-color: var(--secondary-color);
-    padding: 100px 0;
-    margin: 20px 20px;
     padding-bottom: 30px;
     min-height: 100vh;
 }
@@ -27,7 +26,7 @@
     text-align: center;
     font-weight: 500;
     font-size: var(--font-size-h1);
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 
 .cart-item {
@@ -47,7 +46,7 @@
 
 .cart-title {
     font-weight: 400;
-    font-size: var(--font-size-p);
+    font-size: var(--font-size-h3);
     color: var(--primary-color);
 }
 
@@ -64,6 +63,7 @@
 .cart-price-new {
     font-size: var(--font-size-p);
     font-weight: 300;
+    margin: 10px auto;
 }
 
 .cart-price-old {
@@ -79,18 +79,19 @@
     background-color: var(--accent-color);
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
-    font-size: var(--font-size-p);
+    font-size: var(--font-size-label);
+    padding: 2px 5px;
 }
 
 .quantity {
-    font-size: var(--font-size-p);
+    font-size: var(--font-size-label);
 }
 
 .remove-button {
     border: none;
     background-color: transparent;
     color: var(--primary-color);
-    font-size: var(--font-size-p);
+    font-size: var(--font-size-label);
     cursor: pointer;
     padding-top: 10px;
 }
@@ -111,10 +112,11 @@
     text-align: center;
     font-size: var(--font-size-p);
     font-weight: 300;
+    padding: 5px 0;
 }
 
 #checkoutButton {
-    margin-top: 5px;
+    margin-top: 20px;
     cursor: pointer;
     border: none;
     background-color: var(--primary-color);
