@@ -1,79 +1,118 @@
 //Loader//
+showLoader()
 window.addEventListener("load", () => {
     setTimeout(() => {
         hideLoader();
     }, 300)
-});
+})
+
+const API_URL = "https://v2.api.noroff.dev/online-shop";
+let products = [];
 
 //Load cart items from localStorage, display them and calculate total price. Decrease and increase quantity of items in cart, and remove items from cart.
 function loadCart() {
     const cart = JSON.parse(localStorage.getItem("cart")) || []
-    const cartContainer = document.getElementById("cart-container")
-    const totalPriceElement = document.getElementById("cart-total")
+    const container = document.querySelector(".cart-items")
+    const totalElement = document.getElementById("cartTotal")
 
-    cartContainer.innerHTML = ""
+    if (!container || !totalElement) {
+        console.error("Cart container or total element not found.");
+        return;
+    }
+
+
+    container.innerHTML = ""
+    // Filter out invalid cart items (missing id or quantity)//
+    const validCart = cart.filter(item => 
+        item && 
+        item.id &&
+        item.title &&
+        typeof item.price === "number" &&
+        typeof item.quantity === "number" &&
+        item.quantity > 0
+    )
+
+    // Update localStorage with valid cart items only//
+    if (validCart.length !== cart.length) {
+        localStorage.setItem("cart", JSON.stringify(validCart))
+    }
+
+
+
     // If cart is empty, display message//
     if (cart.length === 0) {
-        cartContainer.innerHTML = "<p>Your cart is empty.</p>"
-        totalPriceElement.textContent = "Total: $0.00"
+        container.innerHTML = '<p class="empty-cart"> Your cart is empty.</p>'
+        totalElement.textContent = "Total sum: $0.00"
         return
     }
 
-    let totalPrice = 0
+    let total = 0
+    const productIds = cart.map(item => item.id)
+
     // Loop through cart items and create HTML elements for each item//
-    cart.forEach((item => {
+    cart.forEach(item => {
         const productDiv = document.createElement("div")
-        productDiv.classList.add("cart-item")
+        productDiv.className = "cart-item"
+
+        const title = item.title || "Unknown Product"
+        const description = item.description || "No description available"
+        const image = item.image || "https://via.placeholder.com/150"
+        const price = item.price || 0
+        const discountedPrice = item.discountedPrice || null
+        const quantity = item.quantity || 1
 
         productDiv.innerHTML = `
             <img src="${item.image}" alt="${item.title}" class="cart-image">
-            <div class="cart-details">
+            <div class="cart-info">
                 <h3 class="cart-title">${item.title}</h3>
                 <p class="cart-description">${item.description}</p>
                 <div class="quantity-controls">
-                    <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                    <button class="decrease" data-id="${item.id}">-</button>
                     <span class="quantity">${item.quantity}</span>
-                    <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                    <button class="increase" data-id="${item.id}">+</button>
                 </div>
-                <div class="cart-price">
-                $${item.discountedPrice && item.discountedPrice < item.price
+                <div class="cart-prices">
+                ${item.discountedPrice && item.discountedPrice < item.price
                     ? `
-                        <span class="original-price">$${item.price}</span>
-                        <span class="discounted-price">$${item.discountedPrice}</span>
+                        <span class="cart-price-old">$ ${item.price}</span>
+                        <span class="cart-price-new">$ ${item.discountedPrice}</span>
                         `
                         : `<span class="cart-price-normal">$${item.price}</span>
                         `
                     }
                 </div>
             </div>
-            <button class="remove-btn" data-id="${item.id}"><i class="fa-regular fa-trash-can"></i></button>
+            <button class="remove-button" data-id="${item.id}">
+            <i class="fa-regular fa-trash-can"></i>
+            </button>
         `
         // Calculate total price//
-        cartContainer.appendChild(productDiv)
+        container.appendChild(productDiv)
         const finalPrice = item.discountedPrice ?? item.price
-        totalPrice += finalPrice * item.quantity
-    }))
-    totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`
+        total += finalPrice * item.quantity
+    });
+
+    totalElement.textContent = `Total sum: $ ${total.toFixed(2)}`
 
  // Increase quantity of item in cart//
-    cartContainer.querySelectorAll(".quantity-btn.increase").forEach(button => {
-        button.addEventListener("click", () => {
+    container.querySelectorAll(".increase").forEach(btn => {
+        btn.addEventListener("click", (e) => {
             const id = e.target.getAttribute("data-id")
             changeQuantity(id, 1)
         })
     })
 
     // Decrease quantity of item in cart//
-    cartContainer.querySelectorAll(".quantity-btn.decrease").forEach(button => {
-        button.addEventListener("click", () => {
+    container.querySelectorAll(".decrease").forEach(btn => {
+        btn.addEventListener("click", (e) => {
             const id = e.target.getAttribute("data-id")
             changeQuantity(id, -1)
         })
     })
 
     // Remove item from cart//
-    cartContainer.querySelectorAll(".remove-btn").forEach(button => {
-        button.addEventListener("click", () => {
+    container.querySelectorAll(".remove-button").forEach(btn => {
+        btn.addEventListener("click", (e) => {
             const id = e.target.getAttribute("data-id")
             removeFromCart(id)
         })
@@ -84,8 +123,8 @@ function loadCart() {
 function changeQuantity(id, amount) {
     showLoader()
     let cart = JSON.parse(localStorage.getItem("cart")) || []
-    const item = cart.find(i => i.id === id)
-    if (item) return
+    const item = cart.find(item => item.id === id)
+    if (!item) return
 
     item.quantity += amount
     if (item.quantity <= 0) {
@@ -101,18 +140,18 @@ function changeQuantity(id, amount) {
 // Remove item from cart//
 function removeFromCart(id) {
     let cart = JSON.parse(localStorage.getItem("cart")) || []
-    cart = cart.filter(i => i.id !== id)
+    cart = cart.filter(item => item.id !== id)
     localStorage.setItem("cart", JSON.stringify(cart))
     loadCart()
     updateCartCount()
 }
 
-// Checkout button click event//
+// Checkout button click event to lead you to checkout page, and clear cart after checkout//
 function checkoutButton() {
-    const checkoutButton = document.getElementById("checkout-button")
-    if (checkoutButton) {
-        checkoutButton.textContent = "Check Out"
-        checkoutButton.addEventListener("click", () => {
+    const checkOutButton = document.getElementById("checkoutButton")
+    if (checkOutButton) {
+        checkOutButton.textContent = "Check Out"
+        checkOutButton.addEventListener("click", () => {
             window.location.href = "checkout.html"
             loadCart()
             updateCartCount()
