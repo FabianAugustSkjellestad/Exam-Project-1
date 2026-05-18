@@ -218,7 +218,7 @@ function addToCart(product) {
             description: product.description,
             price: product.price,
             discountedPrice: product.discountedPrice,
-            image: product.image,
+            image: product.image?.url || null,
             quantity: 1
         })
     }

@@ -40,52 +40,41 @@ function loadCart() {
 
 
     // If cart is empty, display message//
-    if (cart.length === 0) {
+    if (validCart.length === 0) {
         container.innerHTML = '<p class="empty-cart"> Your cart is empty.</p>'
         totalElement.textContent = "Total sum: $0.00"
         return
     }
 
     let total = 0
-    const productIds = cart.map(item => item.id)
 
     // Loop through cart items and create HTML elements for each item//
-    cart.forEach(item => {
+    validCart.forEach(item => {
         const productDiv = document.createElement("div")
         productDiv.className = "cart-item"
 
-        const title = item.title || "Unknown Product"
-        const description = item.description || "No description available"
-        const image = item.image || "https://via.placeholder.com/150"
-        const price = item.price || 0
-        const discountedPrice = item.discountedPrice || null
-        const quantity = item.quantity || 1
-
         productDiv.innerHTML = `
-            <img src="${item.image}" alt="${item.title}" class="cart-image">
+            <img src="${item.image || 'https://via.placeholder.com/150'}" alt="${item.title}" class="cart-image">
             <div class="cart-info">
                 <h3 class="cart-title">${item.title}</h3>
-                <p class="cart-description">${item.description}</p>
+                <p class="cart-description">${item.description || 'No description available'}</p>
                 <div class="quantity-controls">
                     <button class="decrease" data-id="${item.id}">-</button>
                     <span class="quantity">${item.quantity}</span>
                     <button class="increase" data-id="${item.id}">+</button>
                 </div>
-                <div class="cart-prices">
-                ${item.discountedPrice && item.discountedPrice < item.price
-                    ? `
-                        <span class="cart-price-old">$ ${item.price}</span>
-                        <span class="cart-price-new">$ ${item.discountedPrice}</span>
-                        `
-                        : `<span class="cart-price-normal">$${item.price}</span>
-                        `
-                    }
+                <div class="price-prices">
+                    ${item.discountedPrice && item.discountedPrice < item.price ? `
+                        <span class="cart-price-old">$${item.price.toFixed(2)}</span>
+                        <span class="cart-price-new">$${item.discountedPrice.toFixed(2)}</span>
+                    ` : `
+                        <span class="cart-price-normal">$${item.price.toFixed(2)}</span>
+                    `}
                 </div>
-            </div>
-            <button class="remove-button" data-id="${item.id}">
-            <i class="fa-regular fa-trash-can"></i>
-            </button>
-        `
+                </div>
+                <button class="remove-button" data-id="${item.id}"><i class="fa-regular fa-trash-can"></i></button>
+            `
+
         // Calculate total price//
         container.appendChild(productDiv)
         const finalPrice = item.discountedPrice ?? item.price
@@ -123,7 +112,7 @@ function loadCart() {
 function changeQuantity(id, amount) {
     showLoader()
     let cart = JSON.parse(localStorage.getItem("cart")) || []
-    const item = cart.find(item => item.id === id)
+    const item = cart.find(item => item.id == id)
     if (!item) return
 
     item.quantity += amount
@@ -140,7 +129,7 @@ function changeQuantity(id, amount) {
 // Remove item from cart//
 function removeFromCart(id) {
     let cart = JSON.parse(localStorage.getItem("cart")) || []
-    cart = cart.filter(item => item.id !== id)
+    cart = cart.filter(item => item.id != id)
     localStorage.setItem("cart", JSON.stringify(cart))
     loadCart()
     updateCartCount()
