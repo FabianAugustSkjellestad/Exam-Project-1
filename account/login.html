@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELLORY | Product Feed Page</title>
+    <title>ELLORY | Login</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/login.css">
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="../js/utils.js"></script>
     <script type="module" src="../js/login.js"></script>
     <script src="https://kit.fontawesome.com/f838836607.js" crossorigin="anonymous"></script>
 </head>
@@ -48,8 +48,23 @@
         </div>
     </nav>
     <main>
-        <section class="login-section">
-            <h1 class="login-title">Log in</h1>
+        <p class="error"></p>
+        <section class="login-form">
+            <form id="loginForm" novalidate>
+                <h1 class="login-h1">Log In</h1>
+                <label for="email">Email</label>
+                <input type="email" id="loginemail" name="email" placeholder="Enter your email" required>
+                <p class="email-error"></p>
+                <label for="password">Password</label>
+                <input type="password" id="loginpassword" name="password" placeholder="Enter your password" required>
+                <p class="password-error"></p>
+                <button type="submit">Log In</button>
+                <p class="login-link">New to Ellory? <a href="register.html">Register</a></p>
+            </form>
+            <div id="loggedInMessage" style="display: none;">
+                <p class="loggedin-message">You are logged in.</p>
+                <button id="logoutButton" class="logout-button">Log Out</button>
+            </div>
             </section>
             </main>
             <footer class="footer">
