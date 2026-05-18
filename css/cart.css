@@ -55,3 +55,38 @@
     padding-top: 15px;
 }
 
+.cart-description,
+.cart-price-normal,
+.cart-price-old,
+.cart-price-new {
+    font-size: var(--font-size-p);
+    font-weight: 300;
+}
+
+.cart-price-old {
+    text-decoration: line-through;
+}
+
+.cart-price-new {
+    color: red;
+}
+
+.decrease,
+.increase {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    font-size: var(--font-size-p);
+}
+
+.quantity {
+    font-size: var(--font-size-p);
+}
+
+.remove-button {
+    border: none;
+    background-color: transparent;
+    color: var(--primary-color);
+    font-size: var(--font-size-p);
+    cursor: pointer;
+}
