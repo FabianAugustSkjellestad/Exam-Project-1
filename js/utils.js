@@ -29,15 +29,22 @@ window.addEventListener("load", () => {
 const hamburgerMenu = document.getElementById("hamburgerMenu")
 const mobileMenu = document.getElementById("mobileMenu")
 
-hamburgerMenu.addEventListener("click", () => {
-    hamburgerMenu.classList.toggle("active")
+//Check if elements exist before adding event listener
+if (hamburgerMenu && mobileMenu) {
+    hamburgerMenu.addEventListener("click", () => {
+        hamburgerMenu.classList.toggle("active")
 
-    const icon = hamburgerMenu.querySelector("i")
-    icon.classList.toggle("fa-bars")
-    icon.classList.toggle("fa-xmark")
+        const icon = hamburgerMenu.querySelector("i")
+        if (icon) {
+            icon.classList.toggle("fa-bars")
+            icon.classList.toggle("fa-xmark")
+        }
 
-    mobileMenu.classList.toggle("active")
-})
+        mobileMenu.classList.toggle("active")
+    })
+} else {
+    console.error("Hamburger menu or mobile menu element not found.") 
+}
 
 
 // Function to update the cart count in the header
