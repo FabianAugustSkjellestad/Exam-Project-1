@@ -25,21 +25,21 @@ window.addEventListener("load", () => {
 })
 
 
-// Function for hamburger menu toggle
-const hamburgerMenu = document.getElementById("hamburgerMenu");
-const mobileMenu = document.getElementById("mobileMenu");
+// Function for hamburger menu toggle //
+const hamburgerMenu = document.getElementById("hamburgerMenu")
+const mobileMenu = document.getElementById("mobileMenu")
 
 hamburgerMenu.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active")
+    hamburgerMenu.classList.toggle("active")
 
-
-    // Toggle the hamburger icon
-    const icon = hamburgerMenu.querySelector("i")
+    const icon = hamburger.querySelector("i")
     icon.classList.toggle("fa-bars")
     icon.classList.toggle("fa-xmark")
 
-    updateCartCount() // Update cart count when menu is toggled
-}) 
+    navMenu.classList.toggle("active")
+
+    updateCartCount()
+});
 
 
 // Function to update the cart count in the header
