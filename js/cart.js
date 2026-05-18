@@ -102,7 +102,7 @@ function loadCart() {
     // Remove item from cart//
     container.querySelectorAll(".remove-button").forEach(btn => {
         btn.addEventListener("click", (e) => {
-            const id = e.target.getAttribute("data-id")
+            const id = e.target.closest(".remove-button").getAttribute("data-id")
             removeFromCart(id)
         })
     })
