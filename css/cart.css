@@ -16,15 +16,18 @@
 
 .cart-container {
     background-color: var(--secondary-color);
-    padding: 10px 0;
-    margin: 20px 0;
+    padding: 100px 0;
+    margin: 20px 20px;
     padding-bottom: 30px;
+    min-height: 100vh;
 }
 
 .cart-headline {
     color: var(--primary-color);
     text-align: center;
     font-weight: 500;
+    font-size: var(--font-size-h1);
+    padding-bottom: 50px;
 }
 
 .cart-item {
@@ -124,4 +127,3 @@
     text-align: center;
     padding-left: 15px;
 }
-
