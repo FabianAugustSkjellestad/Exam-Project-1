@@ -32,14 +32,12 @@ const mobileMenu = document.getElementById("mobileMenu")
 hamburgerMenu.addEventListener("click", () => {
     hamburgerMenu.classList.toggle("active")
 
-    const icon = hamburger.querySelector("i")
+    const icon = hamburgerMenu.querySelector("i")
     icon.classList.toggle("fa-bars")
     icon.classList.toggle("fa-xmark")
 
-    navMenu.classList.toggle("active")
-
-    updateCartCount()
-});
+    mobileMenu.classList.toggle("active")
+})
 
 
 // Function to update the cart count in the header
