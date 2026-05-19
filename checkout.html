@@ -93,12 +93,32 @@
                     <section class="checkout-form">
                         <form id="checkoutForm">
                             <h2 class="checkout-h2">Shipping Address</h2>
-                            
+                            <label for="checkoutEmail">Email *</label>
+                            <input type="email" id="checkoutEmail" placeholder="Your email address" required>
+                            <p class="email-error"></p>
+                            <label for="checkoutMobile">Mobile Number *</label>
+                            <input type="number" id="checkoutMobile" name="number" placeholder="Your Mobile Number" required>
+                            <p class="mobile-error"></p>
+                            <div class="address-row">
+                                <div class="form-field">
+                                    <label for="checkoutAddress">Address Line *</label>
+                                    <input type="text" id="checkoutAddress" name="address" placeholder="Your address" required>
+                                    <p class="address-error"></p>
+                                </div>
+                                <div class="form-field zip-code-field">
+                                    <label for="checkoutZipcode">Zip Code</label>
+                                    <input type="number" id="checkoutZipcode" name="zipcode" placeholder="Zip Code Example: 1234" class="checkout-zipcode" required>
+                                    <p class="zipcode-error"></p>
+                                </div>
+                            </div>
+                            <label for="checkoutInformation">Additional Delivery Information</label>
+                            <input type="text" id="checkoutInformation" name="information" placeholder="Optional">
+                            <button class="place-order-button" type="submit">Place Order</button>
                         </form>
                     </section>
-                    </div>
                 </div>
-            </main>
+            </section>
+        </main>
             <footer class="footer">
                 <section class="footer-container">
                     <div class="Customer-Service">
