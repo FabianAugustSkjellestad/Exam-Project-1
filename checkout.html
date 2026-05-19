@@ -6,8 +6,8 @@
     <title>ELLORY | Product Feed Page</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/checkout.css">
-    <script type="module" src="./js/main.js"></script>
-    <script type="module" src="./js/checkout.js"></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/checkout.js" defer></script>
     <script src="https://kit.fontawesome.com/f838836607.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -48,9 +48,56 @@
         </div>
     </nav>   
     <main>
-        <section class="checkout-section">
-            <h1 class="checkout-title"></h1>
-            </section>
+            <section class="checkout">
+                <div class="checkout-container">
+                    <h1 class="checkout-h1">Checkout</h1>
+                    <section class="payment-form">
+                        <h2 class="checkout-h2">Payment Method</h2>
+                        <form id="paymentForm" novalidate>
+                            <fieldset class="payment-fieldset">
+                                <legend class="sr-only">Payment Method</legend>
+                                <div class="payment-option">
+                                    <div class="payment-left">
+                                        <input type="radio" name="payment" id="vipps" value="vipps">
+                                        <label for="vipps">Vipps</label>
+                                        <i class="fa-solid fa-mobile-screen-button"></i>
+                                    </div>
+                                </div>
+                                <div class="payment-option">
+                                    <div class="payment-left">
+                                        <input type="radio" name="payment" id="card" value="card">
+                                        <label for="card">Credit-/Debit card, Apple Pay</label>
+                                    </div>
+                                    <div class="payment-icons">
+                                        <i class="fa-brands fa-cc-visa checkout-icon"></i>
+                                        <i class="fa-brands fa-cc-mastercard checkout-icon"></i>
+                                        <i class="fa-brands fa-cc-apple-pay checkout-icon"></i>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div id="card-fields" class="card-fields hidden">
+                                <label for="cardNumber" class="sr-only">Card Number</label>
+                                <input type="text" id="cardNumber" placeholder="Card Number">
+                                <p class="cardnumber-error"></p>
+                                <div class="card-row">
+                                    <label for="cardExpirydate" class="sr-only">Expiration date</label>
+                                    <input type="text" id="cardExpirydate" placeholder="Expiration date (MM/YY)">
+                                    <label for="cardCVC" class="sr-only">Security code</label>
+                                    <input type="text" id="cardCVC" placeholder="Security code (CVC)">
+                                    </div>
+                                    <p class="expiry-error"></p>
+                                    <p class="cvc-error"></p>
+                            </div>
+                        </form>
+                    </section>
+                    <section class="checkout-form">
+                        <form id="checkoutForm">
+                            <h2 class="checkout-h2">Shipping Address</h2>
+                            
+                        </form>
+                    </section>
+                    </div>
+                </div>
             </main>
             <footer class="footer">
                 <section class="footer-container">
