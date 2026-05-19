@@ -135,6 +135,13 @@
     color: var(--secondary-color);
     font-size: var(--font-size-label);
     padding: 10px 20px;
+    transition: transform 0.3s ease;
+}
+
+#checkoutButton:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 
 .empty-cart {

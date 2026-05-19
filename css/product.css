@@ -295,6 +295,13 @@
         width: 310px;
         display: block;
         margin: 0 auto;
+        transition: transform 0.3s ease;
+    }
+
+    .add-to-cart-button:hover {
+        background-color: var(--accent-color);
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
     }
 
 }
