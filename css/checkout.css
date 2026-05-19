@@ -147,3 +147,35 @@ body {
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
 }
+
+.email-error,
+.zipcode-error,
+.mobile-error,
+.address-error,
+.zipcode-error,
+.cardnumber-error,
+.expiry-error,
+.cvc-error {
+    color: red;
+    font-size: var(--font-size-p);
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+.checkout-form input:focus,
+.card-fields input:focus,
+.payment-option input:focus {
+    border: 1px solid var(--primary-color) !important;
+    outline: none;
+}
+
+.input-success {
+    border: 1px solid green !important;
+}
+
+.payment-fieldset {
+    border: none;
+    padding: 15px 0;
+}
+
+/* Responsive Design */
