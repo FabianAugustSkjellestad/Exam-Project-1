@@ -36,10 +36,11 @@ body {
     flex-direction: column;
     justify-content: center;
     margin: 80px auto;
+    border: 1px solid var(--primary-color);
 }
 
 .login-h1 {
-    font-size: var(--font-size-h1);
+    font-size: var(--font-size-h2);
     margin-bottom: 30px;
     justify-content: center;
     display: flex;
