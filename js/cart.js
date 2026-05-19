@@ -152,7 +152,8 @@ function checkoutButton() {
 document.addEventListener("DOMContentLoaded", () => {
     showLoader()
     loadCart()
-    hideLoader()
     updateCartCount()
     checkoutButton()
 })
+
+hideLoader()
