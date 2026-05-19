@@ -12,3 +12,138 @@
     --secondary-color: #F7F4F0;
     --accent-color: #FFFFFF;
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.checkout {
+    background-color: var(--accent-color);
+    padding: 50px;
+    width: 100%;
+    max-width: 400px;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 80px auto;
+    border: 1px solid var(--primary-color);
+}
+
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.checkout-h1,
+.checkout-h2 {
+    font-weight: 500;
+}
+
+.checkout-h1 {
+    font-size: var(--font-size-h2);
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+.checkout-h2 {
+    font-size: var(--font-size-h3);
+    margin: 15px 0;
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--primary-color);
+    background-color: var(--accent-color);
+    max-width: 400px;
+    padding: 15px 4px;
+    font-weight: 300;
+}
+
+.payment-icons {
+    margin-right: 2px;
+}
+
+.checkout-icon {
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.card-fields {
+    margin-top: 12px;
+    width: 100%;
+}
+
+.card-fields input {
+    width: 100%;
+    padding: 16px 8px;
+    border: 1px solid var(--primary-color);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.card-row {
+    display: flex;
+    gap: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+.checkout-form {
+    margin-top: 40px;
+}
+
+.checkout-form label {
+    display: block;
+    font-size: var(--font-size-label);
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+
+.checkout-form input {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--primary-color);
+    padding: 16px 0;
+    padding-left: 5px;
+}
+
+.checkout-zipcode {
+    max-width: 180px;
+}
+
+.place-order-button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-label);
+    font-family: var(--primary-font);
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.place-order-button:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
