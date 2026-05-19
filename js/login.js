@@ -1,5 +1,5 @@
 //Loader//
-showLoader();
+showLoader()
 window.addEventListener("load", () => {
     setTimeout(() => {
         hideLoader()
@@ -18,7 +18,8 @@ function goToCart(page) {
 }
 
 // Get form and input elements //
-const form = document.getElementById("login-form");
+const form = document.getElementById("loginForm")
+
 const emailInput = form.email
 const emailError = document.querySelector(".email-error")
 
@@ -26,7 +27,7 @@ const emailError = document.querySelector(".email-error")
 emailInput.addEventListener("blur", () => {
     const email = emailInput.value
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!/^[^\s@]+@stud\.noroff\.no$/.test(email)) {
         emailError.textContent = "Please enter a valid email address. Only stud.noroff.no emails are allowed to register and login."
         emailInput.classList.add("input-error")
         emailInput.classList.remove("input-success")
@@ -84,7 +85,7 @@ form.addEventListener("submit", async (event) => {
         setTimeout(() => {
             hideLoader()
 
-            const redirectPage = localStorage.getItem("redirectToCart") || "cart.html"
+            const redirectPage = localStorage.getItem("redirectToCart") || "/cart.html"
             localStorage.removeItem("redirectToCart")
             goToCart(redirectPage)
         }, 500)
