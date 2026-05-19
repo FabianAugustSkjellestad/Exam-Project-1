@@ -80,3 +80,25 @@ body {
     border: 1px solid var(--primary-color);
 }
 
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: var(--font-size-label);
+    font-weight: 300;
+}
+
+.email-error,
+.password-error,
+.name-error {
+    color: red;
+    font-size: 12px;
+    margin: 0;
+}
+
+.input-error {
+    border: 1px solid red !important;
+}
+
+.input-success {
+    border: 1px solid green !important;
+}
