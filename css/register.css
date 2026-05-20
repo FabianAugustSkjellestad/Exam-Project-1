@@ -21,14 +21,14 @@
     
 body {
     font-family: var(--primary-font);
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
     color: var(--primary-color);
 }
 
 /* Register form styles */
 .register-form {
-    background-color: var(--accent-color);
-    padding: 20px 40px;
+    background-color: var(--secondary-color);
+    padding: 50px;
     max-width: 400px;
     min-height: 60vh;
     display: flex;
@@ -59,6 +59,7 @@ body {
     padding: 10px;
     border: 1px solid var(--primary-color);
     border-radius: 4px;
+    margin-bottom: 20px;
 }
 
 .register-form button {
@@ -67,7 +68,6 @@ body {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     border: none;
-    padding: 10px;
     font-size: var(--font-size-label);
     cursor: pointer;
     font-family: var(--primary-font);
@@ -82,9 +82,15 @@ body {
 
 .register-link {
     text-align: center;
+    align-self: center;
     margin-top: 20px;
-    font-size: var(--font-size-label);
+    font-size: var(--font-size-p);
     font-weight: 300;
+}
+
+.register-link a {
+    color: var(--primary-color);
+    font-size: var(--font-size-label);
 }
 
 .email-error,
