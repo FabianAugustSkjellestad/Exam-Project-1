@@ -7,14 +7,12 @@ window.addEventListener("load", () => {
 })
 
 // Function to get to the cart-page //
-function goToCart(page) {
-    const pathParts = window.location.pathname.split('/')
-    pathParts.pop()
-    if (pathParts[pathParts.length - 1] === "account") {
-        pathParts.pop()
+function goToCart(page = "cart.html") {
+    if (window.location.pathname.includes("/account/")) {
+        window.location.href = `../${page}`
+    } else {
+        window.location.href = page
     }
-    const newPath = pathParts.join('/') + '/' + page
-    window.location.href = newPath
 }
 
 // Get form and input elements //
@@ -85,7 +83,7 @@ form.addEventListener("submit", async (event) => {
         setTimeout(() => {
             hideLoader()
 
-            const redirectPage = localStorage.getItem("redirectToCart") || "/cart.html"
+            const redirectPage = localStorage.getItem("redirectToCart") || "cart.html"
             localStorage.removeItem("redirectToCart")
             goToCart(redirectPage)
         }, 500)
