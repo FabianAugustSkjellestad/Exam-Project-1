@@ -6,7 +6,7 @@
     <title>ELLORY | Product Feed Page</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/checkout.css">
-    <script src="./js/main.js" defer></script>
+    <script src="./js/utils.js" defer></script>
     <script src="./js/checkout.js" defer></script>
     <script src="https://kit.fontawesome.com/f838836607.js" crossorigin="anonymous"></script>
 </head>
@@ -78,7 +78,7 @@
                             <div id="card-fields" class="card-fields hidden">
                                 <label for="cardNumber" class="sr-only">Card Number</label>
                                 <input type="text" id="cardNumber" placeholder="Card Number">
-                                <p class="cardnumber-error"></p>
+                                <p class="cardNumber-error"></p>
                                 <div class="card-row">
                                     <label for="cardExpirydate" class="sr-only">Expiration date</label>
                                     <input type="text" id="cardExpirydate" placeholder="Expiration date (MM/YY)">
@@ -94,7 +94,7 @@
                         <form id="checkoutForm">
                             <h2 class="checkout-h2">Shipping Address</h2>
                             <label for="checkoutEmail">Email *</label>
-                            <input type="email" id="checkoutEmail" placeholder="Your email address" required>
+                            <input type="email" id="checkoutEmail" name="email" placeholder="Your email address" required>
                             <p class="email-error"></p>
                             <label for="checkoutMobile">Mobile Number *</label>
                             <input type="number" id="checkoutMobile" name="number" placeholder="Your Mobile Number" required>
