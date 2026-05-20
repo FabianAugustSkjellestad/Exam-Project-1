@@ -31,6 +31,19 @@ const checkoutForm = document.getElementById("checkoutForm")
 checkoutForm.addEventListener("submit", (event) => {
     event.preventDefault()
 
+    //Validating payment form before showing loader and redirecting to success page//
+    const cardOption = document.querySelector("input[value='card']")
+    if (cardOption.checked) {
+        const cardNumberValid = /^\d{16}$/.test(cardNumber.value)
+        const expiryValid = /^\d{2}\/\d{2}$/.test(expiry.value)
+        const cvcValid = /^\d{3}$/.test(cvc.value)
+
+        if (!cardNumberValid || !expiryValid || !cvcValid) {
+            alert("Please fill out the payment information correctly.")
+            return
+        }
+    }
+
     showLoader()
 
     setTimeout(() => {
