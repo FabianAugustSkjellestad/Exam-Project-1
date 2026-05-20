@@ -18,7 +18,7 @@ function goToCart(page = "cart.html") {
 // Get form and input elements //
 const form = document.getElementById("loginForm")
 
-const emailInput = form.email
+const emailInput = document.getElementById("email")
 const emailError = document.querySelector(".email-error")
 
 // Validation to check if the email is valid //
@@ -36,7 +36,7 @@ emailInput.addEventListener("blur", () => {
     }
 })
 
-const passwordInput = form.password
+const passwordInput = document.getElementById("password")
 const passwordError = document.querySelector(".password-error")
 
 // Validation to check if the password is valid //
