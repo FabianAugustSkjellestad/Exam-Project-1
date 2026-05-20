@@ -1,6 +1,6 @@
 //Loader//
 showLoader()
-window.onLoad = () => {
+window.onload = () => {
     hideLoader()
 }
 
