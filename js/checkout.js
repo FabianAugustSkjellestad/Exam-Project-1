@@ -27,3 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 300)
 })
 
+const checkoutForm = document.getElementById("checkoutForm")
+checkoutForm.addEventListener("submit", (event) => {
+    event.preventDefault()
+
+    showLoader()
+
+    setTimeout(() => {
+        hideLoader()
+
+        localStorage.removeItem("cart")
+        window.location.href = "success.html"
+    }, 600)
+})
