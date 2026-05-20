@@ -87,3 +87,67 @@ cvc.addEventListener("blur", () => {
     }
 })
 
+// Delivery form validation //
+
+const email = checkoutForm.email
+const emailError = document.querySelector(".email-error")
+
+const mobile = checkoutForm.number 
+const mobileError = document.querySelector(".mobile-error")
+
+const address = checkoutForm.address
+const addressError = document.querySelector(".address-error")
+
+const zipcode = checkoutForm.zipcode
+const zipcodeError = document.querySelector(".zipcode-error")
+
+const info = checkoutForm.information
+
+
+email.addEventListener("blur", () => {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        emailError.textContent = "Please enter a valid email address."
+        email.classList.add("input-error")
+        email.classList.remove("input-success")
+    } else {
+        emailError.textContent = ""
+        email.classList.remove("input-error")
+        email.classList.add("input-success")
+    }
+})
+
+mobile.addEventListener("blur", () => {
+    if (!/^\d{8}$/.test(mobile.value)) {
+        mobileError.textContent = "Mobile number must be 8 digits."
+        mobile.classList.add("input-error")
+        mobile.classList.remove("input-success")
+    } else {
+        mobileError.textContent = ""
+        mobile.classList.remove("input-error")
+        mobile.classList.add("input-success")
+    }
+})
+
+address.addEventListener("blur", () => {
+    if (address.value.trim().length < 3) {
+        addressError.textContent = "Address must be at least 3 characters."
+        address.classList.add("input-error")
+        address.classList.remove("input-success")
+    } else {
+        addressError.textContent = ""
+        address.classList.remove("input-error")
+        address.classList.add("input-success")
+    }
+})
+
+zipcode.addEventListener("blur", () => {
+    if (!/^\d{4}$/.test(zipcode.value)) {
+        zipcodeError.textContent = "Zipcode must be 4 digits."
+        zipcode.classList.add("input-error")
+        zipcode.classList.remove("input-success")
+    } else {
+        zipcodeError.textContent = ""
+        zipcode.classList.remove("input-error")
+        zipcode.classList.add("input-success")
+    }
+})
