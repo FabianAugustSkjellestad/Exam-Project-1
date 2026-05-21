@@ -32,7 +32,7 @@ const emailError = document.querySelector(".email-error")
 emailInput.addEventListener("blur", () => {
     const email = emailInput.value
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!/^[^\s@]+@stud\.noroff\.no$/.test(email)) {
         emailError.textContent = "Only stud.noroff.no emails are allowed to register and login."
         emailInput.classList.add("input-error")
         emailInput.classList.remove("input-success")
@@ -62,8 +62,25 @@ passwordInput.addEventListener("blur", () => {
 })
 
 // Register function //
-form.addEventListener("submit", async (event) => {
-    event.preventDefault()
+form.addEventListener("submit", async (e) => {
+    e.preventDefault()
+    
+    //Clear previous error messages //
+    document.querySelector(".error").textContent = ""
+
+    // Trigger validation for all fields //
+    nameInput.dispatchEvent(new Event("blur"))
+    emailInput.dispatchEvent(new Event("blur"))
+    passwordInput.dispatchEvent(new Event("blur"))
+
+    // Check if there are any field errors //
+    const hasErrors = document.querySelectorAll(".input-error").length > 0
+
+    if (hasErrors) {
+        document.querySelector(".error").textContent = "Please fix the errors in the form before submitting."
+        return
+    }
+
     showLoader()
 
     const name = form.name.value
@@ -95,7 +112,7 @@ form.addEventListener("submit", async (event) => {
 
         window.location.href = "login.html"
     } catch (error) {
-        document.querySelector(".form-error").textContent = error.message
+        document.querySelector(".error").textContent = error.message
     } finally {
         hideLoader()
     }
