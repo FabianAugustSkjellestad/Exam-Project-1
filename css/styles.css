@@ -262,6 +262,24 @@ header {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    
+    .header-right {
+        display: none;
+    }
+
+    .logo {
+        padding-left: 15px;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .fa-bars {
+        display: block;
+    }
+
+
     .footer {
         padding: 30px 15px 15px 15px;
     }
