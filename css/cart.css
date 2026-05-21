@@ -150,3 +150,36 @@
     text-align: center;
     padding-left: 15px;
 }
+
+@media (max-width: 480px) {
+    .cart-container {
+        margin: 5px;
+        padding-bottom: 15px;
+        min-height: 70vh;
+    }
+
+    .cart-item {
+        grid-template-columns: 80px 1fr auto;
+        gap: 10px;
+        padding: 10px 5px;
+    }
+
+    .cart-headline {
+        padding-bottom: 20px;
+        padding-top: 50px;
+    }
+
+    .cart-sum {
+        padding-top: 60px;
+    }
+
+    #checkoutButton {
+        margin-top: 25px;
+        margin-bottom: 30px;
+        padding: 12px 25px; /* Better touch target on mobile */
+    }
+
+    .cart-sum::before {
+        top: 20px; /* Adjust position for mobile */
+    }
+}
