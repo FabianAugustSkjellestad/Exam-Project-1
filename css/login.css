@@ -109,6 +109,13 @@ body {
     margin: 0;
 }
 
+.login-error {
+    color: red;
+    font-size: var(--font-size-p);
+    text-align: center;
+    margin-top: 10px;
+}
+
 input.input-error {
     border: 1px solid red;
 }
