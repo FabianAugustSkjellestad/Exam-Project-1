@@ -43,8 +43,8 @@ const passwordError = document.querySelector(".password-error")
 passwordInput.addEventListener("blur", () => {
     const password = passwordInput.value
 
-    if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)) {
-        passwordError.textContent = "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character."
+    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+        passwordError.textContent = "Password must be at least 8 characters long and include at least one number."
         passwordInput.classList.add("input-error")
         passwordInput.classList.remove("input-success")
     } else {
