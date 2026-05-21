@@ -82,6 +82,8 @@
     border: 1px solid var(--primary-color);
     font-size: var(--font-size-label);
     padding: 2px 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .quantity {
