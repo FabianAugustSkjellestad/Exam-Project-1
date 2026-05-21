@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         hideLoader()
     }, 300)
-})
+}) 
 
 const form = document.getElementById("register-form")
 const nameInput = form.name
@@ -89,7 +89,8 @@ form.addEventListener("submit", async (e) => {
 
     const username = email.split("@")[0]
 
-    //POST request to the API to register the user //
+
+    // POST request to register the user //
     try {
         const response = await fetch("https://v2.api.noroff.dev/auth/register", {
             method: "POST",
@@ -100,18 +101,18 @@ form.addEventListener("submit", async (e) => {
                 name: form.name.value,
                 email: form.email.value,
                 password: form.password.value,
-
             })
         })
-
+    
         const data = await response.json()
-
+    
         if (!response.ok) {
-            throw new Error(data.message || "An error occurred while registering.")
+            throw new Error(data.message || JSON.stringify(data.errors) || "An error occurred while registering.")
         } 
-
+    
         window.location.href = "login.html"
     } catch (error) {
+        console.error("Registration error:", error)
         document.querySelector(".error").textContent = error.message
     } finally {
         hideLoader()
