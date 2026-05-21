@@ -43,3 +43,15 @@
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
 }
+
+@media (max-width: 480px) {
+    .success-section {
+        margin: 30px 15px; /* Adjust margin for smaller screens */
+        padding: 25px 15px; 
+    }
+
+    .success-icon {
+        font-size: 60px; /* Reduce icon size for mobile */
+        margin: 15px;
+    }
+}
