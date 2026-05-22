@@ -117,7 +117,7 @@ header {
 .cart-count {
     position: absolute;
     background-color: var(--secondary-color);
-    color: red;
+    color: var(--primary-color);
     border-radius: 50%;
     font-size: var(--font-size-label);
     padding: 2px 6px;
