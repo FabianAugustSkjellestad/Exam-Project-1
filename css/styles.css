@@ -250,7 +250,7 @@ header {
     grid-template-columns: repeat(3, 1fr);
 }
 
-.footer h3 {
+.footer h2 {
     font-size: var(--font-size-h3);
     margin-bottom: 20px;
 }
@@ -289,7 +289,7 @@ header {
         gap: 15px;
     }
 
-    .footer h3 {
+    .footer h2 {
         font-size: calc(var(--font-size-h3) * 0.85); /* Scale down the font size for smaller screens */
         margin-bottom: 15px; /* Reduce the margin for smaller screens */
     }
