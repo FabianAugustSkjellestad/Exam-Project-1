@@ -1,11 +1,6 @@
-//Loader//
-showLoader()
-window.onload = () => {
-    hideLoader()
-}
-
-//When the user clicks on card, cardfields will be shown. When click on vipps, cardfields will be hidden//
+//Loader - And When the user clicks on card, cardfields will be shown. When click on vipps, cardfields will be hidden//
 document.addEventListener("DOMContentLoaded", () => {
+    showLoader()
     const cardOption = document.querySelector("input[value='card']")
     const vippsOption = document.querySelector("input[value='vipps']")
     const cardFields = document.getElementById("card-fields")
@@ -24,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
         hideLoader()
-    }, 300)
+    }, 500)
 })
 
 const checkoutForm = document.getElementById("checkoutForm")
