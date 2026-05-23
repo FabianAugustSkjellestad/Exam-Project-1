@@ -15,3 +15,11 @@ At ELLORY we champion minimalist luxury: handcrafted scents, precision timepiece
 - HTML
 - CSS
 - JavaScript
+
+# Links
+- https://fabianaugustskjellestad.github.io/Exam-Project-1/  -Link to the deployed web application on GitHub Pages
+- https://www.figma.com/design/PIZdSZQE73ikZ8aVvULIAR/Exam-Project-1?node-id=0-1&t=EQ4fGFjQazTb7Cq9-1  -Link to Figma high-fidelity prototype on Desktop
+- https://www.figma.com/design/PIZdSZQE73ikZ8aVvULIAR/Exam-Project-1?node-id=77-640&t=EQ4fGFjQazTb7Cq9-1  -Link to Style guide on Figma
+- https://www.figma.com/design/PIZdSZQE73ikZ8aVvULIAR/Exam-Project-1?node-id=3-2&t=EQ4fGFjQazTb7Cq9-1  -Link to Figma high-fidelity prototype on mobile
+- https://github.com/users/FabianAugustSkjellestad/projects/3  -Link to the public project planning board
+- https://github.com/FabianAugustSkjellestad/Exam-Project-1  -Link to the public GitHub repository for the Exam-Project-1
