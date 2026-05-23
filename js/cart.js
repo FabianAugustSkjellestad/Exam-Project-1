@@ -43,6 +43,7 @@ function loadCart() {
     if (validCart.length === 0) {
         container.innerHTML = '<p class="empty-cart"> Your cart is empty.</p>'
         totalElement.textContent = "Total sum: $0.00"
+        updateCheckoutButton()
         return
     }
 
@@ -141,6 +142,11 @@ function checkoutButton() {
     if (checkOutButton) {
         checkOutButton.textContent = "Check Out"
         checkOutButton.addEventListener("click", () => {
+            const cart = JSON.parse(localStorage.getItem("cart")) || []
+            if (cart.length === 0) {
+                alert("Your cart is empty!")
+                return
+            }
             window.location.href = "checkout.html"
             loadCart()
             updateCartCount()
