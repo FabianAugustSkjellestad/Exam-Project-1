@@ -150,7 +150,7 @@ function renderProduct(product) {
         addToCartButton.addEventListener("click", () => {
             const token = localStorage.getItem("token")
             if (!token) {
-                window.location.href = "/account/login.html"
+                window.location.href = "../account/login.html"
                 return
             }
             addToCart(product)
