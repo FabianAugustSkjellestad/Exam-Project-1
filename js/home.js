@@ -173,7 +173,7 @@ function displayProducts() {
 
         productCard.innerHTML = `
             <img src="${imageUrl}" alt="${product.title}" class="product-image">
-            <h3 class="product-title">${product.title}</h3>
+            <h2 class="product-title">${product.title}</h2>
             <p class="product-price">${isDiscounted ? `<span class="original-price">$${price.toFixed(2)}</span> <span class="discounted-price">$${product.discountedPrice.toFixed(2)}</span>` : `$${price.toFixed(2)}`}</p>
             <button class="view-product-btn">View Product</button>
         `;
