@@ -204,7 +204,7 @@
 }
 
 .discounted-price {
-    font-size: var(--font-size-p);
+    font-size: var(--font-size-label);
     color: red;
     font-weight: 500;
 }
