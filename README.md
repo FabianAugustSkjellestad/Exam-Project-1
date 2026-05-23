@@ -16,6 +16,9 @@ At ELLORY we champion minimalist luxury: handcrafted scents, precision timepiece
 - CSS
 - JavaScript
 
+# Usage
+You have to register and login with an email containing @stud.noroff.no
+
 # Links
 - https://fabianaugustskjellestad.github.io/Exam-Project-1/  -Link to the deployed web application on GitHub Pages
 - https://www.figma.com/design/PIZdSZQE73ikZ8aVvULIAR/Exam-Project-1?node-id=0-1&t=EQ4fGFjQazTb7Cq9-1  -Link to Figma high-fidelity prototype on Desktop
